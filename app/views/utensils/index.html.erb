@@ -25,24 +25,25 @@
       </div>
 
       <div class="col-9">
-        <div class="row">
-          <h3>Item Brand and Name</h3>
+        <% @utensils.each do |utensil| %>
+        <div class="row utensils">
+          <h3><%= utensil.brand%> <%=utensil.name%></h3>
           <div class="col-6">
 
-            <%= image_tag "melon_baller.jpeg", height: '100px' %>
+            <%= image_tag "#{utensil.picture}" %>
           </div>
           <div class="col-6">
-            <p>DISCRIPTION:  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <p>Price: $$$</p>
-            <p>UPC: numbers yay!</p>
+            <p>DISCRIPTION: <%=  utensil.description %> </p>
+            <p>Price: $<%= utensil.price %></p>
+            <p>UPC: <%= utensil.upc %></p>
           </div>
         </div>
+        <% end %>
       </div>
       <div class="col-2 menu">
         <ul>
           <li>shopping cart shit</li>
           <li>bitto to somthino</li>
-
         </ul>
       </div>
 
@@ -53,10 +54,10 @@
     <div class="footer">
       <div class="row">
         <div class="col-2">
-          <%= image_tag "basket.png", height: '40px' %>
+          <%= image_tag "fireplace.png", height: '40px' %>
         </div>
         <div class="col-9">
-          <h3>Kitchen Essentials: Find your Heart</h3>
+          <h3>Kitchen Essentials: Hearth, Home, Heart</h3>
         </div>
       </div>
     </div>
